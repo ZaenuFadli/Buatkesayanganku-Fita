@@ -1,0 +1,473 @@
+/* Reset dan Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.8s ease;
+    overflow-x: hidden;
+    position: relative;
+}
+.romantic-text {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.2rem; /* Dikurangi dari 1.5rem untuk lebih kecil */
+    color: #ff69b4;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Tema Terang (Default) dengan Gradient Animasi */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #fce4ec, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: #161515;
+}
+.dark-mode {
+    background: linear-gradient(135deg, #111135, #152f75, #076dea);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: #0a0202;
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Parallax Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/bokeh-bg.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+    animation: parallax 20s linear infinite;
+}
+@keyframes parallax {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
+
+/* Halaman Login */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #b3e5fc, #f8bbd9);
+    position: relative;
+}
+.login-page::after {
+    content: '💕';
+    position: absolute;
+    font-size: 3rem; /* Dikurangi dari 5rem untuk lebih kecil */
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem; /* Dikurangi dari 2rem */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 105, 180, 0.3);
+    text-align: center;
+    animation: fadeInGlow 1.5s ease-in;
+    backdrop-filter: blur(10px);
+    width: 90%; /* Responsif, maksimal 90% lebar layar */
+    max-width: 400px; /* Batas maksimal */
+}
+.login-title {
+    font-size: 2rem; /* Dikurangi dari 2.5rem */
+    margin-bottom: 1rem;
+    color: #ff69b4;
+    animation: sparkle 2s infinite;
+}
+@keyframes sparkle {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 105, 180, 1); }
+}
+#loginForm input {
+    width: 100%;
+    padding: 0.6rem; /* Dikurangi dari 0.75rem */
+    margin: 0.5rem 0;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    font-size: 0.9rem; /* Dikurangi dari 1rem */
+    transition: all 0.3s;
+}
+#loginForm input:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+#loginForm button {
+    background: linear-gradient(45deg, #ff69b4, #87ceeb);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem; /* Dikurangi dari 0.75rem 1.5rem */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    font-size: 0.9rem; /* Dikurangi */
+}
+#loginForm button:hover {
+    transform: scale(1.05); /* Dikurangi dari 1.1 untuk lebih halus */
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* Dashboard */
+.dashboard-page {
+    position: relative;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem; /* Dikurangi dari 1rem */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(228, 18, 18, 0.1);
+}
+.hamburger, .theme-toggle, .mute-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem; /* Dikurangi dari 1.5rem */
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50%;
+    padding: 0.4rem; /* Dikurangi dari 0.5rem */
+}
+.hamburger:hover, .theme-toggle:hover, .mute-toggle:hover {
+    transform: scale(1.1); /* Dikurangi dari 1.2 */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px; /* Dikurangi dari 250px untuk lebih kecil */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 3rem 1rem 1rem; /* Dikurangi padding atas */
+    z-index: 999;
+    border-radius: 0 20px 20px 0;
+}
+.nav-menu.open {
+    left: 0;
+}
+.nav-menu ul {
+    list-style: none;
+}
+.nav-menu a {
+    display: block;
+    padding: 0.6rem; /* Dikurangi dari 0.75rem */
+    color: #333;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.3s;
+    margin: 0.4rem 0; /* Dikurangi dari 0.5rem */
+    font-size: 0.9rem; /* Dikurangi */
+}
+.nav-menu a:hover {
+    background: linear-gradient(45deg, rgba(255, 105, 180, 0.5), rgba(135, 206, 235, 0.5));
+    transform: translateX(8px); /* Dikurangi dari 10px */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+.main-content {
+    margin-top: 4rem; /* Dikurangi dari 5rem untuk header lebih kecil */
+    padding: 1.5rem; /* Dikurangi dari 2rem */
+    min-height: 100vh;
+    animation: fadeInGlow 1s ease-in;
+    overflow-y: auto;
+    max-height: calc(100vh - 4rem);
+}
+
+/* Fitur Umum */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem; /* Dikurangi dari 1.5rem */
+    border-radius: 15px; /* Dikurangi dari 20px */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(255, 105, 180, 0.2);
+    margin: 0.8rem 0; /* Dikurangi dari 1rem */
+    transition: all 0.5s;
+    animation: float 4s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02); /* Dikurangi dari -10px dan 1.02 */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 105, 180, 0.4);
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem; /* Dikurangi dari 1rem */
+}
+.btn {
+    background: linear-gradient(45deg, #ff69b4, #87ceeb);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem; /* Dikurangi dari 0.75rem 1.5rem */
+    border-radius: 12px; /* Dikurangi dari 15px */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    font-weight: 600;
+    font-size: 0.85rem; /* Dikurangi */
+}
+.btn:hover {
+    transform: scale(1.05); /* Dikurangi dari 1.1 */
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* Gambar Responsif */
+img, .gallery-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Memory Game */
+.memory-card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+.memory-card .card-front, .memory-card .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px; /* Dikurangi dari 15px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Dikurangi dari 2rem */
+    transition: transform 0.6s;
+}
+.memory-card .card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(45deg, #ff69b4, #87ceeb);
+}
+.memory-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+.memory-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+/* Animasi */
+@keyframes fadeInGlow {
+    from { opacity: 0; transform: translateY(20px); box-shadow: 0 0 0 rgba(255, 105, 180, 0); } /* Dikurangi translateY dari 30px */
+    to { opacity: 1; transform: translateY(0); box-shadow: 0 0 20px rgba(255, 105, 180, 0.3); }
+}
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 4s steps(40, end);
+    border-right: 2px solid #ff69b4;
+}
+.heart-fall {
+    position: absolute;
+    font-size: 1.5rem; /* Dikurangi dari 2rem */
+    animation: fall 3s linear infinite;
+    pointer-events: none;
+}
+@keyframes fall {
+    from { top: -10%; opacity: 1; transform: rotate(0deg); }
+    to { top: 110%; opacity: 0; transform: rotate(360deg); }
+}
+.confetti {
+    position: absolute;
+    width: 8px; /* Dikurangi dari 10px */
+    height: 8px; /* Dikurangi dari 10px */
+    background: #ff69b4;
+    animation: confettiFall 2s linear;
+}
+@keyframes confettiFall {
+    from { top: 0; opacity: 1; }
+    to { top: 100vh; opacity: 0; }
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1rem;
+        max-width: 90%;
+    }
+    .login-title {
+        font-size: 1.5rem;
+    }
+    #loginForm input, #loginForm button {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    .nav-menu {
+        width: 180px;
+        padding: 2rem 0.5rem 1rem;
+    }
+    .nav-menu a {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    .main-content {
+        padding: 1rem;
+        margin-top: 3rem;
+        max-height: calc(100vh - 3rem);
+    }
+    .card {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    .memory-card .card-front, .memory-card .card-back {
+        font-size: 1.2rem;
+    }
+    .heart-fall {
+        font-size: 1.2rem;
+    }
+    .confetti {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        width: 200px;
+    }
+    .main-content {
+        padding: 1rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .login-title {
+        font-size: 2rem;
+    }
+    .card {
+        padding: 1rem;
+    }
+    .btn {
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .nav-menu {
+        width: 240px;
+    }
+    .main-content {
+        padding: 1.2rem;
+    }
+}
+/* Efek Typewriter untuk Pesan Cinta */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 4s steps(40, end);
+    border-right: 2px solid #ff69b4;
+    font-size: 1rem; /* Ukuran default */
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+/* Responsivitas untuk Pesan Cinta */
+@media (max-width: 768px) {
+    .typewriter {
+        white-space: normal; /* Biarkan teks wrap di mobile */
+        animation: typewriter 6s steps(40, end); /* Durasi lebih lama untuk readability */
+        border-right: 1px solid #ff69b4; /* Border lebih tipis */
+        font-size: 0.9rem; /* Font lebih kecil di mobile */
+        line-height: 1.4;
+        margin: 0.3rem 0;
+    }
+    /* Sesuaikan kartu pesan di mobile */
+    .card:has(.typewriter) {
+        padding: 0.8rem; /* Padding lebih kecil */
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter {
+        font-size: 0.8rem; /* Lebih kecil di mobile kecil */
+        animation: typewriter 8s steps(40, end); /* Durasi lebih lama */
+        line-height: 1.3;
+    }
+    .card:has(.typewriter) {
+        padding: 0.6rem;
+    }
+}
+/*logout */
+.logout-btn {
+    display: inline-block;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #4da8ff, #dfe4e9);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(30, 144, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.logout-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    transition: all 0.4s ease;
+}
+
+.logout-btn:hover::before {
+    left: 100%;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 5px 15px rgba(77, 168, 255, 0.6);
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 8px rgba(77, 168, 255, 0.4);
+}
